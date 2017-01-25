@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="commons-collections-3.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-adapters-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-api-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jstl-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jstl-impl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jta-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-jdk14-1.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

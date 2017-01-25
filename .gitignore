@@ -3,6 +3,8 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+old
+
 # Package Files #
 *.jar
 *.war
@@ -32,7 +34,7 @@ hs_err_pid*
 
 # Gradle:
 .idea/gradle.xml
-.idea/libraries
+# .idea/libraries
 
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
