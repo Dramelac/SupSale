@@ -39,5 +39,6 @@
     <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
     <orderEntry type="library" name="mysql" level="project" />
     <orderEntry type="library" name="commons-collections-3.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.0.M15" level="application_server_libraries" />
   </component>
 </module>
