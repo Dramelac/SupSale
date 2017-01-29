@@ -10,7 +10,7 @@ public abstract class SecurityUtils {
     }
 
     public static String getHashfromPassword(String password){
-        return getHashfromPassword(password, BCrypt.gensalt(30000));
+        return getHashfromPassword(password, BCrypt.gensalt(12));
     }
 
     public static boolean checkPassworc(String password, String hash){
