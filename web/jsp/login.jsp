@@ -7,6 +7,12 @@
 <body>
 <%@ include file="include/header.jsp" %>
 
+<c:if test="${failed}">
+    <div class="alert alert-danger">
+        <strong>Failed!</strong> Your details are incorrect. Please try again.
+    </div>
+</c:if>
+
 <form action="login" method="POST">
     <label>
         Username :

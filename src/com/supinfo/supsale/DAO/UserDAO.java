@@ -6,6 +6,7 @@ import com.supinfo.supsale.utils.PersistenceManager;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import java.util.List;
 
 public class UserDAO {
 
@@ -31,7 +32,11 @@ public class UserDAO {
         EntityManager em = PersistenceManager.getEntityManager();
         Query query = em.createQuery("SELECT u.password FROM User u WHERE u.username = :username");
         query.setParameter("username", username);
-        return ((String) query.getResultList().get(0));
+        List result = query.getResultList();
+        if (result.size() == 0){
+            return "";
+        }
+        return ((String) result.get(0));
     }
 
     public static User getUserByName(String username){

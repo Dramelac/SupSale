@@ -17,11 +17,12 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String passbdd = UserDAO.getPasswordByName(username);
 
-        if (SecurityUtils.checkPassworc(request.getParameter("password"), passbdd)){
+        if (!passbdd.isEmpty() && SecurityUtils.checkPassworc(request.getParameter("password"), passbdd)){
             request.getSession().setAttribute("username", username);
             response.sendRedirect(request.getContextPath()+"/");
         }
         else {
+            request.getSession().setAttribute("failed", true);
             doGet(request, response);
         }
 
