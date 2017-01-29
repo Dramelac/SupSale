@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
     <div class="container-fluid">
 
@@ -17,8 +18,14 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<%=request.getContextPath()%>/register"><p class="navbar-text">Register</p></a></li>
-                <li><a href="<%=request.getContextPath()%>/login"><p class="navbar-text">Login</p></a></li>
+                <c:if test="${username} == null">
+                    <li><a href="<%=request.getContextPath()%>/register"><p class="navbar-text">Register</p></a></li>
+                    <li><a href="<%=request.getContextPath()%>/login"><p class="navbar-text">Login</p></a></li>
+                </c:if>
+                <c:if test="${username} != null">
+                    <li><a href="<%=request.getContextPath()%>/user/profile"><p class="navbar-text">Profile</p></a></li>
+                    <li><a href="<%=request.getContextPath()%>/user/logout"><p class="navbar-text">Logout</p></a></li>
+                </c:if>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

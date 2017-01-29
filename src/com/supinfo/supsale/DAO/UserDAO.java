@@ -20,10 +20,16 @@ public class UserDAO {
 
     public static String getPasswordByName(String username){
         EntityManager em = PersistenceManager.getEntityManager();
-        Query query = (Query) em.createQuery("SELECT u.password FROM User u WHERE u.username = :username");
+        Query query = em.createQuery("SELECT u.password FROM User u WHERE u.username = :username");
         query.setParameter("username", username);
         return ((String) query.getResultList().get(0));
+    }
 
+    public static User getUserByName(String username){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query query = em.createQuery("SELECT u FROM User u WHERE u.username = :username");
+        query.setParameter("username", username);
+        return ((User) query.getResultList().get(0));
     }
 
 }
