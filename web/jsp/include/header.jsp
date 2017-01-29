@@ -18,11 +18,11 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <c:if test="${username} == null">
+                <c:if test="${empty username}">
                     <li><a href="<%=request.getContextPath()%>/register"><p class="navbar-text">Register</p></a></li>
                     <li><a href="<%=request.getContextPath()%>/login"><p class="navbar-text">Login</p></a></li>
                 </c:if>
-                <c:if test="${username} != null">
+                <c:if test="${not empty username}">
                     <li><a href="<%=request.getContextPath()%>/user/profile"><p class="navbar-text">Profile</p></a></li>
                     <li><a href="<%=request.getContextPath()%>/user/logout"><p class="navbar-text">Logout</p></a></li>
                 </c:if>

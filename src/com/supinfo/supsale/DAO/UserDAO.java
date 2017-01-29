@@ -18,6 +18,15 @@ public class UserDAO {
         em.close();
     }
 
+    public static void updateUser(User user){
+        EntityManager em = PersistenceManager.getEntityManager();
+        EntityTransaction et = em.getTransaction();
+        et.begin();
+        em.merge(user);
+        et.commit();
+        em.close();
+    }
+
     public static String getPasswordByName(String username){
         EntityManager em = PersistenceManager.getEntityManager();
         Query query = em.createQuery("SELECT u.password FROM User u WHERE u.username = :username");

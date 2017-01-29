@@ -20,7 +20,7 @@ public class RegisterServlet extends HttpServlet {
         user.setLastname(request.getParameter("lastname"));
         user.setEmail(request.getParameter("email"));
         user.setAddress(request.getParameter("address"));
-        user.setNumber(request.getParameter("phonenumber"));
+        user.setPhonenumber(request.getParameter("phonenumber"));
         user.setUsername(request.getParameter("username"));
         user.setPassword(SecurityUtils.getHashfromPassword(request.getParameter("password")));
 

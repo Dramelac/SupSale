@@ -92,12 +92,11 @@ public class User implements Serializable{
         this.address = address;
     }
 
-    public String getNumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setNumber(String number) {
-        this.phonenumber = number;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
-
 }
