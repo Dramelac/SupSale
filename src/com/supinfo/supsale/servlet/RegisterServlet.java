@@ -2,6 +2,7 @@ package com.supinfo.supsale.servlet;
 
 import com.supinfo.supsale.DAO.UserDAO;
 import com.supinfo.supsale.entity.User;
+import com.supinfo.supsale.utils.SecurityUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +22,7 @@ public class RegisterServlet extends HttpServlet {
         user.setAddress(request.getParameter("address"));
         user.setNumber(request.getParameter("phonenumber"));
         user.setUsername(request.getParameter("username"));
-        user.setPassword(request.getParameter("password"));
+        user.setPassword(SecurityUtils.getHashfromPassword(request.getParameter("password")));
 
         UserDAO.addUser(user);
 

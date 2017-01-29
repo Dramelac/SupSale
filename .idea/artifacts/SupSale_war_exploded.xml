@@ -12,6 +12,7 @@
           <element id="library" level="project" name="JPA 2.0-2.0" />
           <element id="library" level="project" name="mysql" />
           <element id="library" level="project" name="commons-collections-3.1" />
+          <element id="library" level="project" name="org.mindrot:jbcrypt:0.3m" />
         </element>
       </element>
     </root>
