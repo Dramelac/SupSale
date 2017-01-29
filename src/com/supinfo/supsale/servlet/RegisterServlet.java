@@ -26,6 +26,9 @@ public class RegisterServlet extends HttpServlet {
 
         UserDAO.addUser(user);
 
+        request.getSession().setAttribute("username", user.getUsername());
+        response.sendRedirect(request.getContextPath()+"/");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

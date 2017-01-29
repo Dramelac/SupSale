@@ -9,46 +9,50 @@
 <html>
 <head>
     <title>Register</title>
+    <%@ include file="include/style.jsp" %>
 </head>
 <body>
+<%@ include file="include/header.jsp" %>
+
 <form action="register" method="POST">
     <label>
-        firstname :
+        First name :
         <input type="text" name="firstname">
     </label>
     <br>
     <label>
-        lastname :
+        Last name :
         <input type="text" name="lastname">
     </label>
     <br>
     <label>
-        email :
+        E-mail :
         <input type="text" name="email">
     </label>
     <br>
     <label>
-        address :
+        Address :
         <input type="text" name="address">
     </label>
     <br>
     <label>
-        phonenumber :
+        Phone number :
         <input type="text" name="phonenumber">
     </label>
     <br>
     <label>
-        username :
+        Username :
         <input type="text" name="username">
     </label>
     <br>
     <label>
-        password :
+        Password :
         <input type="password" name="password">
     </label>
     <br>
-    <input type="submit" value="register">
+    <input type="submit" value="Register">
 
 </form>
+<%@ include file="include/javascript.jsp" %>
 </body>
 </html>

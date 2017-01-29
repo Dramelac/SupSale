@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath()+"/");
         }
         else {
-            System.out.print("Wrong password");
+            doGet(request, response);
         }
 
     }
