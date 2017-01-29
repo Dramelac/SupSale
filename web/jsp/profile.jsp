@@ -9,9 +9,14 @@
 
 <h1>Hello ${username}</h1>
 
-<c:if test="${result}">
+<c:if test="${success}">
     <div class="alert alert-success">
-        <strong>Success!</strong> Profile successfully updated.
+        <strong>Success!</strong> ${message}
+    </div>
+</c:if>
+<c:if test="${failed}">
+    <div class="alert alert-danger">
+        <strong>Failed!</strong> ${message}
     </div>
 </c:if>
 
@@ -41,12 +46,23 @@
         <input type="text" name="phonenumber" value="${user.phonenumber}">
     </label>
     <br>
+    <br>
     <label>
         Password :
         <input type="password" name="password">
     </label>
     <br>
-    <input type="submit" value="Register">
+    <label>
+        Verify new password :
+        <input type="password" name="check_password">
+    </label>
+    <br>
+    <label>
+        Current password :
+        <input type="password" name="old_password">
+    </label>
+    <br>
+    <input type="submit" value="Update">
 
 </form>
 

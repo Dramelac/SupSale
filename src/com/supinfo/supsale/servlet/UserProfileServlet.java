@@ -15,6 +15,8 @@ import java.io.IOException;
 @WebServlet(name = "UserProfileServlet", urlPatterns = "/user/profile")
 public class UserProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("failed", false);
+
         User user = UserDAO.getUserByName(request.getSession().getAttribute("username").toString());
         user.setFirstname(request.getParameter("firstname"));
         user.setLastname(request.getParameter("lastname"));
@@ -24,12 +26,26 @@ public class UserProfileServlet extends HttpServlet {
 
         String pass = request.getParameter("password");
         if (!pass.isEmpty()){
-            user.setPassword(SecurityUtils.getHashfromPassword(pass));
+            if (!request.getParameter("password").equals(request.getParameter("check_password"))){
+                request.setAttribute("failed", true);
+                request.setAttribute("message", "Password not match.");
+            } else {
+                if (SecurityUtils.checkPassworc(request.getParameter("old_password"), user.getPassword())){
+                    user.setPassword(SecurityUtils.getHashfromPassword(pass));
+                } else {
+                    request.setAttribute("failed", true);
+                    request.setAttribute("message", "Wrong current password.");
+                }
+            }
+
         }
 
-        UserDAO.updateUser(user);
+        if (!(boolean)request.getAttribute("failed")){
+            UserDAO.updateUser(user);
 
-        request.setAttribute("result", true);
+            request.setAttribute("success", true);
+            request.setAttribute("message", "Profile successfully updated.");
+        }
 
         doGet(request, response);
     }

@@ -3,12 +3,12 @@
     <div class="container-fluid">
 
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">SupSale</a>
+            <a class="navbar-brand" href="<%=request.getContextPath()%>/">SupSale</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Link</a></li>
+                <li><a href="#">Add article</a></li>
                 <li><a href="#">Link</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
