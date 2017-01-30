@@ -33,10 +33,7 @@ public class UserDAO {
         Query query = em.createQuery("SELECT u.password FROM User u WHERE u.username = :username");
         query.setParameter("username", username);
         List result = query.getResultList();
-        if (result.size() == 0){
-            return "";
-        }
-        return ((String) result.get(0));
+        return (result.size() == 0) ? "" : ((String) result.get(0));
     }
 
     public static User getUserByName(String username){
