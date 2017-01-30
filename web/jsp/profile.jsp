@@ -67,8 +67,8 @@
 </form>
 
 <c:if test="${user.isAdmin}">
-    <div class="alert">
-        You are admin ! You can access to the admin pannel <a href="<%=request.getContextPath()%>/admin">here</a>
+    <div class="alert alert-info">
+        <a href="<%=request.getContextPath()%>/admin/">You are admin ! You can access to the admin pannel here</a>
     </div>
 </c:if>
 
