@@ -1,4 +1,4 @@
-package com.supinfo.supsale.servlet;
+package com.supinfo.supsale.servlet.admin;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

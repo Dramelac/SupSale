@@ -1,4 +1,4 @@
-package com.supinfo.supsale.servlet;
+package com.supinfo.supsale.servlet.user;
 
 import com.supinfo.supsale.DAO.UserDAO;
 import com.supinfo.supsale.entity.User;
