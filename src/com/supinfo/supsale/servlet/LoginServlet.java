@@ -1,6 +1,7 @@
 package com.supinfo.supsale.servlet;
 
 import com.supinfo.supsale.DAO.UserDAO;
+import com.supinfo.supsale.entity.User;
 import com.supinfo.supsale.utils.SecurityUtils;
 
 import javax.servlet.ServletException;
@@ -15,10 +16,12 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username = request.getParameter("username");
-        String passbdd = UserDAO.getPasswordByName(username);
+        User user = UserDAO.getUserByName(username);
 
-        if (!passbdd.isEmpty() && SecurityUtils.checkPassworc(request.getParameter("password"), passbdd)){
-            request.getSession().setAttribute("username", username);
+        if (user != null && SecurityUtils.checkPassworc(request.getParameter("password"), user.getPassword())){
+            request.getSession().setAttribute("username", user.getUsername());
+            request.getSession().setAttribute("userId", user.getId());
+            request.getSession().setAttribute("isAdmin", user.isAdmin());
             response.sendRedirect(request.getContextPath()+"/");
         }
         else {

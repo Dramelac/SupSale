@@ -31,6 +31,9 @@ public class User implements Serializable{
     @Column(unique=false)
     private String phonenumber;
 
+    @Column(unique=false)
+    private boolean isAdmin;
+
     public User() {
     }
 
@@ -42,6 +45,7 @@ public class User implements Serializable{
         this.email = email;
         this.address = address;
         this.phonenumber = phonenumber;
+        this.isAdmin = false;
     }
 
     public String getUsername() {
@@ -99,4 +103,21 @@ public class User implements Serializable{
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public int getId() {
+        return id;
+    }
+
 }

@@ -40,7 +40,13 @@ public class UserDAO {
         EntityManager em = PersistenceManager.getEntityManager();
         Query query = em.createQuery("SELECT u FROM User u WHERE u.username = :username");
         query.setParameter("username", username);
-        return ((User) query.getResultList().get(0));
+        List result = query.getResultList();
+        return (result.size() == 0) ? null : ((User) result.get(0));
+    }
+
+    public static User getUserById(int id){
+        EntityManager em = PersistenceManager.getEntityManager();
+        return em.find(User.class, id);
     }
 
 }

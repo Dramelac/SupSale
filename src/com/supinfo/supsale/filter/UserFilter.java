@@ -15,7 +15,7 @@ public class UserFilter implements Filter {
         HttpServletRequest request  = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
 
-        if(request.getSession().getAttribute("username") == null){
+        if(request.getSession().getAttribute("userId") == null){
             response.sendRedirect(request.getContextPath()+"/login");
         }else{
             chain.doFilter(req, resp);

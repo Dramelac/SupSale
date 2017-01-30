@@ -12,12 +12,12 @@ public class AdminFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        HttpServletRequest request  = (HttpServletRequest) req;
+        HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
 
-        if(request.getSession().getAttribute("isAdmin") == null){
-            response.sendRedirect(request.getContextPath()+"/");
-        }else{
+        if (request.getSession().getAttribute("isAdmin") == null || !(boolean) request.getSession().getAttribute("isAdmin")) {
+            response.sendRedirect(request.getContextPath() + "/");
+        } else {
             chain.doFilter(req, resp);
         }
     }
