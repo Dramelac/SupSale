@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: doria
-  Date: 28/01/2017
-  Time: 23:54
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,6 +6,12 @@
 </head>
 <body>
 <%@ include file="include/header.jsp" %>
+
+<c:if test="${failed}">
+    <div class="alert alert-danger">
+        <strong>Failed!</strong> This account or email already exist.
+    </div>
+</c:if>
 
 <form action="register" method="POST">
     <label>

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "RegisterServlet",urlPatterns = "/register")
+@WebServlet(name = "RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
@@ -24,10 +24,16 @@ public class RegisterServlet extends HttpServlet {
         user.setUsername(request.getParameter("username"));
         user.setPassword(SecurityUtils.getHashfromPassword(request.getParameter("password")));
 
-        UserDAO.addUser(user);
-
-        request.getSession().setAttribute("username", user.getUsername());
-        response.sendRedirect(request.getContextPath()+"/");
+        try {
+            UserDAO.addUser(user);
+            request.getSession().setAttribute("username", user.getUsername());
+            request.getSession().setAttribute("userId", user.getId());
+            request.getSession().setAttribute("isAdmin", user.isAdmin());
+            response.sendRedirect(request.getContextPath() + "/");
+        } catch (Exception e) {
+            request.setAttribute("failed", true);
+            doGet(request, response);
+        }
 
     }
 

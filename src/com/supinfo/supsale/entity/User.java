@@ -22,7 +22,7 @@ public class User implements Serializable{
     @Column(unique=false)
     private String lastname;
 
-    @Column(unique=false)
+    @Column(unique=true)
     private String email;
 
     @Column(unique=false)
