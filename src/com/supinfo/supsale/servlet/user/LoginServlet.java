@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         User user = UserDAO.getUserByName(username);
 
-        if (user != null && SecurityUtils.checkPassworc(request.getParameter("password"), user.getPassword())){
+        if (user != null && SecurityUtils.checkPassword(request.getParameter("password"), user.getPassword())){
             request.getSession().setAttribute("username", user.getUsername());
             request.getSession().setAttribute("userId", user.getId());
             request.getSession().setAttribute("isAdmin", user.isAdmin());

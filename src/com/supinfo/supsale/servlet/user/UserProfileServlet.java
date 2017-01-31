@@ -30,7 +30,7 @@ public class UserProfileServlet extends HttpServlet {
                 request.setAttribute("failed", true);
                 request.setAttribute("message", "Password not match.");
             } else {
-                if (SecurityUtils.checkPassworc(request.getParameter("old_password"), user.getPassword())) {
+                if (SecurityUtils.checkPassword(request.getParameter("old_password"), user.getPassword())) {
                     user.setPassword(SecurityUtils.getHashfromPassword(pass));
                 } else {
                     request.setAttribute("failed", true);

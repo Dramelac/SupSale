@@ -12,6 +12,11 @@
         <strong>Failed!</strong> This account or email already exist.
     </div>
 </c:if>
+<c:if test="${wrongpassword}">
+    <div class="alert alert-danger">
+        <strong>Failed!</strong> ${message2}
+    </div>
+</c:if>
 
 <form action="register" method="POST">
     <label>
@@ -47,6 +52,11 @@
     <label>
         Password :
         <input type="password" name="password">
+    </label>
+    <br>
+    <label>
+        Password verification:
+        <input type="password" name="passwordverif">
     </label>
     <br>
     <input type="submit" value="Register">

@@ -47,8 +47,9 @@
     </label>
     <br>
     <br>
+    <h2>Change password :</h2>
     <label>
-        Password :
+        New password :
         <input type="password" name="password">
     </label>
     <br>
