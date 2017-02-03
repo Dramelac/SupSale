@@ -1,4 +1,4 @@
-package com.supinfo.supsale.servlet;
+package com.supinfo.supsale.servlet.advert;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ListProductServlet")
-public class ListProductServlet extends HttpServlet {
+@WebServlet(name = "ListAdvertServlet")
+public class ListAdvertServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

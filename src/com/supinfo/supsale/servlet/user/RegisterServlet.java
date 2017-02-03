@@ -1,6 +1,7 @@
 package com.supinfo.supsale.servlet.user;
 
 import com.supinfo.supsale.DAO.UserDAO;
+import com.supinfo.supsale.entity.Advert;
 import com.supinfo.supsale.entity.User;
 import com.supinfo.supsale.utils.SecurityUtils;
 
@@ -23,6 +24,7 @@ public class RegisterServlet extends HttpServlet {
         user.setAddress(request.getParameter("address"));
         user.setPhonenumber(request.getParameter("phonenumber"));
         user.setUsername(request.getParameter("username"));
+
 
         if (request.getParameter("password").equals(request.getParameter("passwordverif"))){
 
