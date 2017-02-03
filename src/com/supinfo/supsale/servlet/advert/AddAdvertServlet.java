@@ -24,10 +24,7 @@ public class AddAdvertServlet extends HttpServlet {
         advert.setDescription(request.getParameter("description"));
         advert.setPrice(Integer.parseInt(request.getParameter("price")));
         advert.setOwner(user);
-        List<Advert> test = user.getAdverts();
-        test.add(advert);
-        user.setAdverts(test);
-        AdvertDAO.addAdvert(advert);
+        user.getAdverts().add(advert);
         UserDAO.updateUser(user);
         response.sendRedirect(request.getContextPath() + "/");
 
