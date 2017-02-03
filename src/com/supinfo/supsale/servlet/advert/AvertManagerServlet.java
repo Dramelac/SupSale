@@ -22,8 +22,7 @@ public class AvertManagerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
-        List<Advert> adverts = AdvertDAO.getAllAdvertByUser(user);
-        request.setAttribute("list", adverts);
+        request.setAttribute("list", user.getAdverts());
         request.getRequestDispatcher("/jsp/advertManager.jsp").forward(request, response);
     }
 }
