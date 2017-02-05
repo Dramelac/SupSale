@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath()+"/");
         }
         else {
-            request.getSession().setAttribute("failed", true);
+            request.setAttribute("failed", true);
             doGet(request, response);
         }
 

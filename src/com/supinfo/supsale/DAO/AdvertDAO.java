@@ -41,4 +41,12 @@ public class AdvertDAO {
         return em.find(Advert.class, id);
     }
 
+    public static void removeAdvertByAdvert(Advert ad){
+        EntityManager em = PersistenceManager.getEntityManager();
+        EntityTransaction et = em.getTransaction();
+        et.begin();
+        em.remove(em.contains(ad) ? ad : em.merge(ad));
+        et.commit();
+        em.close();
+    }
 }

@@ -13,7 +13,7 @@
     <div class="advert">
         <p>Name : ${a.name} </p>
         <a href="<%=request.getContextPath()%>/view?id=${a.id}">View</a> |
-        <a href="<%=request.getContextPath()%>/user/removeadvert/view?id=${a.id}">Remove</a><br>
+        <a href="<%=request.getContextPath()%>/user/removeadvert?id=${a.id}">Remove</a><br>
         =========================================
     </div>
 </c:forEach>
