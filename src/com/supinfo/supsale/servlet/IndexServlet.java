@@ -1,7 +1,7 @@
 package com.supinfo.supsale.servlet;
 
-import com.supinfo.supsale.DAO.AdvertDAO;
-import com.supinfo.supsale.DAO.UserDAO;
+import com.supinfo.supsale.DAL.AdvertDAO;
+import com.supinfo.supsale.DAL.UserDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

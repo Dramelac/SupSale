@@ -1,7 +1,6 @@
 package com.supinfo.supsale.servlet.advert;
 
-import com.supinfo.supsale.DAO.AdvertDAO;
-import com.supinfo.supsale.DAO.UserDAO;
+import com.supinfo.supsale.DAL.UserDAO;
 import com.supinfo.supsale.entity.Advert;
 import com.supinfo.supsale.entity.Categorie;
 import com.supinfo.supsale.entity.User;
@@ -11,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.Console;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,7 +37,6 @@ public class AddAdvertServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Categorie> categorieList = new ArrayList<Categorie>( Arrays.asList(Categorie.values() ));
-
         request.setAttribute("categorieList", categorieList);
 
         request.getRequestDispatcher("/jsp/user/addadvert.jsp").forward(request, response);

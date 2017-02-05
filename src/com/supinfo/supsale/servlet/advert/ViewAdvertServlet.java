@@ -1,6 +1,6 @@
 package com.supinfo.supsale.servlet.advert;
 
-import com.supinfo.supsale.DAO.AdvertDAO;
+import com.supinfo.supsale.DAL.AdvertDAO;
 import com.supinfo.supsale.entity.Advert;
 import javassist.NotFoundException;
 
@@ -23,6 +23,10 @@ public class ViewAdvertServlet extends HttpServlet {
             Advert advert = AdvertDAO.getAdvertById(Integer.parseInt(request.getParameter("id")));
             if (advert == null){
                 throw new NotFoundException("Advert no found");
+            }
+            Object userId = request.getSession().getAttribute("userId");
+            if (userId != null && userId.equals(advert.getOwner().getId())){
+                request.setAttribute("isOwner", true);
             }
             request.setAttribute("advert", advert);
             request.setAttribute("owner", advert.getOwner().getUsername());

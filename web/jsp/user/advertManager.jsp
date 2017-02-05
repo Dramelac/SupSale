@@ -13,6 +13,7 @@
     <div class="advert">
         <p>Name : ${a.name} </p>
         <a href="<%=request.getContextPath()%>/view?id=${a.id}">View</a> |
+        <a href="<%=request.getContextPath()%>/user/updateadvert?id=${a.id}">Edit</a> |
         <a href="<%=request.getContextPath()%>/user/removeadvert?id=${a.id}">Remove</a><br>
         =========================================
     </div>

@@ -1,23 +1,16 @@
-package com.supinfo.supsale.DAO;
+package com.supinfo.supsale.DAL;
 import com.supinfo.supsale.entity.Advert;
 import com.supinfo.supsale.entity.User;
 import com.supinfo.supsale.utils.PersistenceManager;
+import javassist.NotFoundException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import java.io.IOException;
 import java.util.List;
 
 public class AdvertDAO {
-
-    public static void addAdvert(Advert advert){
-        EntityManager em = PersistenceManager.getEntityManager();
-        EntityTransaction et = em.getTransaction();
-        et.begin();
-        em.persist(advert);
-        et.commit();
-        em.close();
-    }
 
     public static void updateAdvert(Advert advert){
         EntityManager em = PersistenceManager.getEntityManager();
@@ -54,5 +47,15 @@ public class AdvertDAO {
         EntityManager em = PersistenceManager.getEntityManager();
         Query query = em.createQuery("SELECT count(*) FROM Advert");
         return (long) query.getSingleResult();
+    }
+
+    public static Advert getAndCheck(int id, int userID) throws NotFoundException, IOException, IllegalAccessException {
+        Advert advert = AdvertDAO.getAdvertById(id);
+        if (advert == null){
+            throw new NotFoundException("Advert no found");
+        } else if (advert.getOwner().getId() != userID){
+            throw new IllegalAccessException("You dont have access to this advert");
+        }
+        return advert;
     }
 }

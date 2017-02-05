@@ -18,6 +18,12 @@
 
     <p>Posted by ${owner} at ${advert.publishDate}</p>
     <p>Price : ${advert.price}€</p>
+
+    <c:if test="${isOwner}">
+        <h2>You are the owner</h2>
+        <a href="<%=request.getContextPath()%>/user/updateadvert?id=${advert.id}">Edit</a> |
+        <a href="<%=request.getContextPath()%>/user/removeadvert?id=${advert.id}">Remove</a><br>
+    </c:if>
 </div>
 
 <%@ include file="include/javascript.jsp" %>

@@ -1,4 +1,4 @@
-package com.supinfo.supsale.DAO;
+package com.supinfo.supsale.DAL;
 
 import com.supinfo.supsale.entity.User;
 import com.supinfo.supsale.utils.PersistenceManager;
