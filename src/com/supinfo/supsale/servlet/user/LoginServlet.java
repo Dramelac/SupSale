@@ -1,6 +1,6 @@
 package com.supinfo.supsale.servlet.user;
 
-import com.supinfo.supsale.DAO.UserDAO;
+import com.supinfo.supsale.DAL.UserDAO;
 import com.supinfo.supsale.entity.User;
 import com.supinfo.supsale.utils.SecurityUtils;
 
@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath()+"/");
         }
         else {
-            request.getSession().setAttribute("failed", true);
+            request.setAttribute("failed", true);
             doGet(request, response);
         }
 

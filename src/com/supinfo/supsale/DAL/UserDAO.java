@@ -1,4 +1,4 @@
-package com.supinfo.supsale.DAO;
+package com.supinfo.supsale.DAL;
 
 import com.supinfo.supsale.entity.User;
 import com.supinfo.supsale.utils.PersistenceManager;
@@ -47,6 +47,18 @@ public class UserDAO {
     public static User getUserById(int id){
         EntityManager em = PersistenceManager.getEntityManager();
         return em.find(User.class, id);
+    }
+
+    public static long getUserCount(){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query query = em.createQuery("SELECT count(*) FROM User");
+        return (long) query.getSingleResult();
+    }
+
+    public static List<User> getAll(){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query query = em.createQuery("SELECT u FROM User u");
+        return (List<User>) query.getResultList();
     }
 
 }

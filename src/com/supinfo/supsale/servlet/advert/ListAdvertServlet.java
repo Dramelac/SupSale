@@ -1,7 +1,4 @@
-package com.supinfo.supsale.servlet;
-
-import com.supinfo.supsale.DAL.AdvertDAO;
-import com.supinfo.supsale.DAL.UserDAO;
+package com.supinfo.supsale.servlet.advert;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,16 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
-@WebServlet(name = "IndexServlet", urlPatterns = "/")
-public class IndexServlet extends HttpServlet {
+@WebServlet(name = "ListAdvertServlet")
+public class ListAdvertServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("userCount", UserDAO.getUserCount());
-        request.setAttribute("advertCount", AdvertDAO.getAdvertCount());
-        request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+
     }
 }

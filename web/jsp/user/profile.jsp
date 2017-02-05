@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>SupSale- Profile</title>
-    <%@ include file="include/style.jsp" %>
+    <%@ include file="../include/style.jsp" %>
 </head>
 <body>
-<%@ include file="include/header.jsp" %>
+<%@ include file="../include/header.jsp" %>
 
 <h1>Hello ${username}</h1>
 
@@ -73,6 +73,6 @@
     </div>
 </c:if>
 
-<%@ include file="include/javascript.jsp" %>
+<%@ include file="../include/javascript.jsp" %>
 </body>
 </html>

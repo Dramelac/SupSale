@@ -2,6 +2,7 @@ package com.supinfo.supsale.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class User implements Serializable{
@@ -34,10 +35,13 @@ public class User implements Serializable{
     @Column(unique=false)
     private boolean isAdmin;
 
+    @OneToMany(mappedBy="owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    private List<Advert> adverts;
+
     public User() {
     }
 
-    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber) {
+    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber, boolean isAdmin, List<Advert> adverts) {
         this.username = username;
         this.password = password;
         this.firstname = firstname;
@@ -45,7 +49,12 @@ public class User implements Serializable{
         this.email = email;
         this.address = address;
         this.phonenumber = phonenumber;
-        this.isAdmin = false;
+        this.isAdmin = isAdmin;
+        this.adverts = adverts;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getUsername() {
@@ -108,16 +117,14 @@ public class User implements Serializable{
         return isAdmin;
     }
 
-    public boolean getIsAdmin() {
-        return isAdmin;
-    }
+    public boolean getIsAdmin() {return isAdmin;}
 
     public void setAdmin(boolean admin) {
         isAdmin = admin;
     }
 
-    public int getId() {
-        return id;
-    }
+    public List<Advert> getAdverts() {return adverts;}
+
+    public void setAdverts(List<Advert> adverts) {this.adverts = adverts;}
 
 }

@@ -9,8 +9,14 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Add article</a></li>
-                <li><a href="#">Link</a></li>
+                <c:if test="${not empty username}">
+                    <li><a href="<%=request.getContextPath()%>/user/addadvert"><p>Add advert</p></a></li>
+                    <li><a href="<%=request.getContextPath()%>/user/advertmanager"><p>Advert manager</p></a></li>
+
+                    <c:if test="${isAdmin}">
+                        <li><a href="<%=request.getContextPath()%>/admin/"><p>Admin panel</p></a></li>
+                    </c:if>
+                </c:if>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
