@@ -53,6 +53,6 @@ public class UserProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
         request.setAttribute("user", user);
-        request.getRequestDispatcher("/jsp/profile.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/user/profile.jsp").forward(request, response);
     }
 }

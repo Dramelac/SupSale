@@ -12,7 +12,6 @@
                     <li><a href="<%=request.getContextPath()%>/user/addadvert"><p>Add advert</p></a></li>
                     <li><a href="<%=request.getContextPath()%>/user/advertmanager"><p>Advert manager</p></a></li>
                 </c:if>
-                <li><a href="#">Link</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">

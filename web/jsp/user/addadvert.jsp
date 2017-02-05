@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Add Advert</title>
-    <%@ include file="include/style.jsp" %>
+    <%@ include file="../include/style.jsp" %>
 </head>
 <body>
-<%@ include file="include/header.jsp" %>
+<%@ include file="../include/header.jsp" %>
 
 <h1>Hello ${username}, what do you want to add?</h1>
 <br>
@@ -30,6 +30,6 @@
 </form>
 
 
-<%@ include file="include/javascript.jsp" %>
+<%@ include file="../include/javascript.jsp" %>
 </body>
 </html>

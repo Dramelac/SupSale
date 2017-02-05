@@ -31,6 +31,6 @@ public class AddAdvertServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/jsp/addadvert.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/user/addadvert.jsp").forward(request, response);
     }
 }
