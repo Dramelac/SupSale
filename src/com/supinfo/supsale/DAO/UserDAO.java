@@ -49,4 +49,10 @@ public class UserDAO {
         return em.find(User.class, id);
     }
 
+    public static long getUserCount(){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query query = em.createQuery("SELECT count(*) FROM User");
+        return (long) query.getSingleResult();
+    }
+
 }

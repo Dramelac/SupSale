@@ -49,4 +49,10 @@ public class AdvertDAO {
         et.commit();
         em.close();
     }
+
+    public static long getAdvertCount(){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query query = em.createQuery("SELECT count(*) FROM Advert");
+        return (long) query.getSingleResult();
+    }
 }
