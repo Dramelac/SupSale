@@ -12,8 +12,8 @@
 <c:forEach var="a" items="${list}">
     <div class="advert">
         <p>Name : ${a.name} </p>
-        <p>Content : ${a.description}</p>
-        <p>Price : ${a.price}</p>
+        <a href="<%=request.getContextPath()%>/view?id=${a.id}">View</a> |
+        <a href="<%=request.getContextPath()%>/user/removeadvert/view?id=${a.id}">Remove</a><br>
         =========================================
     </div>
 </c:forEach>
