@@ -1,5 +1,6 @@
 package com.supinfo.supsale.DAL;
 
+import com.supinfo.supsale.entity.Advert;
 import com.supinfo.supsale.entity.User;
 import com.supinfo.supsale.utils.PersistenceManager;
 
@@ -59,6 +60,16 @@ public class UserDAO {
         EntityManager em = PersistenceManager.getEntityManager();
         Query query = em.createQuery("SELECT u FROM User u");
         return (List<User>) query.getResultList();
+    }
+
+    public static void removeUserById(int id){
+        EntityManager em = PersistenceManager.getEntityManager();
+        User user = getUserById(id);
+        EntityTransaction et = em.getTransaction();
+        et.begin();
+        em.remove(em.contains(user) ? user : em.merge(user));
+        et.commit();
+        em.close();
     }
 
 }
