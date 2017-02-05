@@ -1,7 +1,10 @@
 package com.supinfo.supsale.entity;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 public class Advert implements Serializable{
@@ -18,18 +21,21 @@ public class Advert implements Serializable{
     @Column(unique = false)
     private int price;
 
+    @Column(unique = false, nullable = true)
+    private String imageUrl;
+
+    @Column
+    @Type(type = "timestamp")
+    private Date publishDate;
+
+    @Column
+    private Categorie categorie;
+
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_fk")
     private User owner;
 
     public Advert() {
-    }
-
-    public Advert(String name, String description, int price, User user) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.owner = user;
     }
 
     public int getId() {return id;}
@@ -49,4 +55,28 @@ public class Advert implements Serializable{
     public User getOwner() {return owner;}
 
     public void setOwner(User user) {this.owner = user;}
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Date getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(Date publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
 }

@@ -22,6 +22,23 @@
     </label>
     <br>
     <label>
+        Categorie :
+        <select name="categorie">
+            <option value=""></option>
+            <c:forEach items="${categorieList}" var="option">
+                <option value="${option}">
+                    <c:out value="${option.name}"></c:out>
+                </option>
+            </c:forEach>
+        </select>
+    </label>
+    <br>
+    <label>
+        Image url :
+        <input type="text" name="image">
+    </label>
+    <br>
+    <label>
         Its price :
         <input type="text" name="price">
     </label>

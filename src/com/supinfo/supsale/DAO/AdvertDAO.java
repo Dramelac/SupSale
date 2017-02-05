@@ -36,7 +36,7 @@ public class AdvertDAO {
         return adverts;
     }
 
-    public static Advert getAdvertByUser(int id){
+    public static Advert getAdvertById(int id){
         EntityManager em = PersistenceManager.getEntityManager();
         return em.find(Advert.class, id);
     }
