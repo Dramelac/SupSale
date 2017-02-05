@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<style><%@ include file="/jsp/CSS/style.css"%></style>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
     <div class="container-fluid">
 

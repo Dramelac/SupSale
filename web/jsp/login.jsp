@@ -13,7 +13,8 @@
     </div>
 </c:if>
 
-<form action="login" method="POST">
+<img src="logo.png" />
+<form action="login" method="POST" class="login">
     <label>
         Username :
         <input type="text" name="username">
@@ -22,7 +23,7 @@
         Password :
         <input type="password" name="password">
     </label><br/>
-    <input type="submit" value="Log in">
+    <input type="submit" value="Log in" class="button">
 </form>
 
 <%@ include file="include/javascript.jsp" %>

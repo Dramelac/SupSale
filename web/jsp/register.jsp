@@ -17,51 +17,59 @@
         <strong>Failed!</strong> ${message2}
     </div>
 </c:if>
+<img src="logo.png" class="logo"/>
+<form action="register" method="POST" class="login">
+    <label class="labels_register">
+        First name
 
-<form action="register" method="POST">
-    <label>
-        First name :
-        <input type="text" name="firstname">
     </label>
     <br>
-    <label>
-        Last name :
-        <input type="text" name="lastname">
+    <input type="text" name="firstname" class="inputs_register">
+    <br>
+    <label class="labels_register">
+        Last name
     </label>
     <br>
-    <label>
-        E-mail :
-        <input type="text" name="email">
-    </label>
+        <input type="text" name="lastname" class="inputs_register">
+
     <br>
-    <label>
-        Address :
-        <input type="text" name="address">
-    </label>
+    <label class="labels_register">
+        E-mail
+
+    </label> <br><input type="text" name="email" class="inputs_register">
     <br>
-    <label>
-        Phone number :
-        <input type="text" name="phonenumber">
-    </label>
+    <label class="labels_register">
+        Address
+
+    </label> <br><input type="text" name="address" class="inputs_register">
     <br>
-    <label>
-        Username :
-        <input type="text" name="username">
-    </label>
+    <label class="labels_register">
+        Phone number
+
+    </label> <br><input type="text" name="phonenumber" class="inputs_register">
     <br>
-    <label>
-        Password :
-        <input type="password" name="password">
-    </label>
+    <label class="labels_register">
+        Username
+
+    </label>  <br><input type="text" name="username" class="inputs_register">
     <br>
-    <label>
-        Password verification:
-        <input type="password" name="passwordverif">
-    </label>
+    <label class="labels_register">
+        Password
+
+    </label> <br><input type="password" name="password" class="inputs_register">
     <br>
-    <input type="submit" value="Register">
+    <label class="labels_register">
+        Password verification
+
+    </label> <br> <input type="password" name="passwordverif" class="inputs_register">
+    <br>
+    <input type="submit" value="Register" class="button">
 
 </form>
 <%@ include file="include/javascript.jsp" %>
 </body>
 </html>
+
+
+
+
