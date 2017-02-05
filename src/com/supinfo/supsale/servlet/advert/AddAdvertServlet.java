@@ -31,7 +31,7 @@ public class AddAdvertServlet extends HttpServlet {
         advert.setOwner(user);
         user.getAdverts().add(advert);
         UserDAO.updateUser(user);
-        response.sendRedirect(request.getContextPath() + "/");
+        response.sendRedirect(request.getContextPath() + "/index");
 
     }
 

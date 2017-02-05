@@ -34,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
                 request.getSession().setAttribute("username", user.getUsername());
                 request.getSession().setAttribute("userId", user.getId());
                 request.getSession().setAttribute("isAdmin", user.isAdmin());
-                response.sendRedirect(request.getContextPath() + "/");
+                response.sendRedirect(request.getContextPath() + "/index");
             } catch (Exception e) {
                 request.setAttribute("failed", true);
                 doGet(request, response);

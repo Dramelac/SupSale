@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("username", user.getUsername());
             request.getSession().setAttribute("userId", user.getId());
             request.getSession().setAttribute("isAdmin", user.isAdmin());
-            response.sendRedirect(request.getContextPath()+"/");
+            response.sendRedirect(request.getContextPath()+"/index");
         }
         else {
             request.setAttribute("failed", true);

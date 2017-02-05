@@ -23,7 +23,7 @@ public class AdminFilter implements Filter {
         }
 
         if (request.getSession().getAttribute("isAdmin") == null || !(boolean) request.getSession().getAttribute("isAdmin")) {
-            response.sendRedirect(request.getContextPath() + "/");
+            response.sendRedirect(request.getContextPath() + "/index");
         } else {
             chain.doFilter(req, resp);
         }

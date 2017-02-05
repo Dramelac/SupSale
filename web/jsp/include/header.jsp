@@ -1,10 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<style><%@ include file="/jsp/CSS/style.css"%></style>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
     <div class="container-fluid">
 
         <div class="navbar-header">
-            <a class="navbar-brand" href="<%=request.getContextPath()%>/">SupSale</a>
+            <a class="navbar-brand" href="<%=request.getContextPath()%>/index">SupSale</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
