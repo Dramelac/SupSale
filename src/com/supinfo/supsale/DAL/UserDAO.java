@@ -55,4 +55,10 @@ public class UserDAO {
         return (long) query.getSingleResult();
     }
 
+    public static List<User> getAll(){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query query = em.createQuery("SELECT u FROM User u");
+        return (List<User>) query.getResultList();
+    }
+
 }
