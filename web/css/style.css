@@ -25,9 +25,9 @@ body{
 
 
 .logo {
-    text-align: center;
-    width: 30%;
-    height: 40%;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
 }
 
 .inputs_register{
@@ -41,8 +41,18 @@ body{
     margin-bottom: 0px;
 }
 .text_index{
-margin-left: 20%;
+    margin-left: 20%;
     margin-right: 20%;
     text-align: left;
 }
 
+.logo_div{
+    text-align: center;
+
+}
+
+.logo_register {
+    width: 150px;
+    height: 150px;
+
+}

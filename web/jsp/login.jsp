@@ -12,8 +12,9 @@
         <strong>Failed!</strong> Your details are incorrect. Please try again.
     </div>
 </c:if>
-
+<div class="logo_div">
 <img src="<c:url value="/img/logo.png" />" class="logo"/>
+</div>
 <form action="login" method="POST" class="login">
     <label>
         Username :
