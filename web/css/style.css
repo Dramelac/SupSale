@@ -45,6 +45,18 @@ body{
     margin-right: 20%;
     text-align: left;
 }
+.imageadvert{
+    width: 95%;
+    height: 50%;
+}
+.advertIndex{
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+    width: 15%;
+    margin: 3px;
+}
 
 .logo_div{
     text-align: center;
