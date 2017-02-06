@@ -5,6 +5,10 @@ body{
 
 }
 
+.row {
+    margin-top: 20px;
+}
+
 .login{
     text-align: center;
     margin-top: 30px;
@@ -25,36 +29,39 @@ body{
 
 
 .logo {
-    text-align: center;
-    width: 30%;
-    height: 40%;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .inputs_register{
     width: 280px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 5px;
 }
 
 .labels_register{
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
+
 .text_index{
-margin-left: 20%;
-    margin-right: 20%;
     text-align: left;
+    display: block;
 }
+
 .imageadvert{
-    width: 95%;
-    height: 50%;
+    max-width: 600px;
+    max-height: 400px;
 }
+
 .advertIndex{
     border-width: 3px;
     border-style: solid;
     border-color: black;
     padding: 5px;
-    width: 15%;
     margin: 3px;
 }
 
+.filter{
+
+}

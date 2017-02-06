@@ -7,25 +7,32 @@
 <body>
 <%@ include file="include/header.jsp" %>
 
-<c:if test="${failed}">
-    <div class="alert alert-danger">
-        <strong>Failed!</strong> Your details are incorrect. Please try again.
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="<c:url value="/img/logo.png" />" class="logo"/>
+            <h4>Log in</h4>
+        </div>
+        <div class="col-md-offset-1 col-md-8">
+            <c:if test="${failed}">
+                <div class="alert alert-danger">
+                    <strong>Failed!</strong> Your details are incorrect. Please try again.
+                </div>
+            </c:if>
+            <form action="login" method="POST" class="login">
+                <label>
+                    Username :
+                    <input type="text" name="username">
+                </label><br/>
+                <label>
+                    Password :
+                    <input type="password" name="password">
+                </label><br/>
+                <input type="submit" value="Log in" class="button">
+            </form>
+        </div>
     </div>
-</c:if>
-
-<img src="<c:url value="/img/logo.png" />" class="logo"/>
-<form action="login" method="POST" class="login">
-    <label>
-        Username :
-        <input type="text" name="username">
-    </label><br/>
-    <label>
-        Password :
-        <input type="password" name="password">
-    </label><br/>
-    <input type="submit" value="Log in" class="button">
-</form>
-
+</div>
 <%@ include file="include/javascript.jsp" %>
 </body>
 </html>
