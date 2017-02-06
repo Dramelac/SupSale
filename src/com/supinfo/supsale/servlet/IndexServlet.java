@@ -2,6 +2,7 @@ package com.supinfo.supsale.servlet;
 
 import com.supinfo.supsale.DAL.AdvertDAO;
 import com.supinfo.supsale.DAL.UserDAO;
+import com.supinfo.supsale.entity.Categorie;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +21,8 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("userCount", UserDAO.getUserCount());
         request.setAttribute("advertCount", AdvertDAO.getAdvertCount());
+        request.setAttribute("categorieList", Categorie.CategorieList);
+
         request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
     }
 }

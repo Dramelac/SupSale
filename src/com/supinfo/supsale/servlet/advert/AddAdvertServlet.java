@@ -36,8 +36,7 @@ public class AddAdvertServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Categorie> categorieList = new ArrayList<Categorie>( Arrays.asList(Categorie.values() ));
-        request.setAttribute("categorieList", categorieList);
+        request.setAttribute("categorieList", Categorie.CategorieList);
 
         request.getRequestDispatcher("/jsp/user/addadvert.jsp").forward(request, response);
     }

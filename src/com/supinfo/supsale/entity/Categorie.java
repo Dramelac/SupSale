@@ -1,6 +1,9 @@
 package com.supinfo.supsale.entity;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public enum Categorie {
     Vehicules("Véhicules"),
     Employement("Employement"),
@@ -26,4 +29,6 @@ public enum Categorie {
     public String toString(){
         return name;
     }
+
+    public static ArrayList<Categorie> CategorieList = new ArrayList<>( Arrays.asList(Categorie.values() ));
 }

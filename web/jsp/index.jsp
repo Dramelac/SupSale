@@ -16,6 +16,14 @@
     </p>
     <p>Actualy they are ${userCount} users and ${advertCount} ads online !</p>
 </div>
+<div>
+    <p>Filter by categorie : </p>
+    <ul>
+        <c:forEach items="${categorieList}" var="option">
+            <li><a href="search?q=${option}">${option.name}</a></li>
+        </c:forEach>
+    </ul>
+</div>
 
 <%@ include file="include/javascript.jsp" %>
 </body>

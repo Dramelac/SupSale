@@ -2,6 +2,7 @@ package com.supinfo.supsale.servlet.advert;
 
 import com.supinfo.supsale.DAL.AdvertDAO;
 import com.supinfo.supsale.entity.Advert;
+import com.supinfo.supsale.entity.Categorie;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,13 @@ public class SearchTextServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String txt = request.getParameter("q");
-        List<Advert> result = AdvertDAO.searchFullText(txt);
+        List<Advert> result = null;
+        try {
+            Categorie categorie = Categorie.valueOf(txt);
+            result = AdvertDAO.searchByCategorie(categorie);
+        } catch (IllegalArgumentException e){
+            result = AdvertDAO.searchFullText(txt);
+        }
         request.setAttribute("resultList", result);
         request.setAttribute("filter", txt);
 

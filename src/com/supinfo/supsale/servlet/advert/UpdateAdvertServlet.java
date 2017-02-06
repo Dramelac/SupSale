@@ -57,8 +57,7 @@ public class UpdateAdvertServlet extends HttpServlet {
             response.sendError(403);
             return;
         }
-        List<Categorie> categorieList = new ArrayList<>(Arrays.asList(Categorie.values()));
-        request.setAttribute("categorieList", categorieList);
+        request.setAttribute("categorieList", Categorie.CategorieList);
         request.setAttribute("advert", advert);
 
         request.getRequestDispatcher("/jsp/user/updateAdvert.jsp").forward(request, response);

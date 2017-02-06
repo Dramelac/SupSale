@@ -1,5 +1,6 @@
 package com.supinfo.supsale.DAL;
 import com.supinfo.supsale.entity.Advert;
+import com.supinfo.supsale.entity.Categorie;
 import com.supinfo.supsale.entity.User;
 import com.supinfo.supsale.utils.PersistenceManager;
 import javassist.NotFoundException;
@@ -60,10 +61,16 @@ public class AdvertDAO {
     }
 
     public static List<Advert> searchFullText(String txt){
-
         EntityManager em = PersistenceManager.getEntityManager();
         Query  query = em.createQuery("SELECT a FROM Advert a where a.name LIKE :txt OR a.description LIKE :txt OR a.owner.username LIKE :txt");
         query.setParameter("txt","%"+txt+"%");
+        return (List<Advert>)query.getResultList();
+    }
+
+    public static List<Advert> searchByCategorie(Categorie search){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query  query = em.createQuery("SELECT a FROM Advert a where a.categorie = :filter");
+        query.setParameter("filter", search);
         return (List<Advert>)query.getResultList();
     }
 }
