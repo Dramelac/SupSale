@@ -21,10 +21,9 @@ public class AdvertDAO {
         em.close();
     }
 
-    public static List<Advert> getAllAdvertByUser(User user){
+    public static List<Advert> getAllAdverts(){
         EntityManager em = PersistenceManager.getEntityManager();
-        Query  query = (Query) em.createQuery("SELECT a FROM Advert a where a.owner = :usertest");
-        query.setParameter("usertest",user);
+        Query  query = (Query) em.createQuery("SELECT a FROM Advert a");
         List<Advert> adverts = (List<Advert>)query.getResultList();
         return adverts;
     }
