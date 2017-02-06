@@ -13,7 +13,7 @@
     </div>
 </c:if>
 
-<img src="<c:url value="/img/logo.png" />"/>
+<img src="<c:url value="/img/logo.png" />" class="logo"/>
 <form action="login" method="POST" class="login">
     <label>
         Username :

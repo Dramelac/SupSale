@@ -26,6 +26,8 @@ body{
 
 .logo {
     text-align: center;
+    width: 30%;
+    height: 40%;
 }
 
 .inputs_register{

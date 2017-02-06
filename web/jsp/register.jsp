@@ -17,7 +17,7 @@
         <strong>Failed!</strong> ${message2}
     </div>
 </c:if>
-<img src="<c:url value="/img/logo.png" />"/>
+<img src="<c:url value="/img/logo.png" />"class="logo"/>
 <form action="register" method="POST" class="login">
     <label class="labels_register">
         First name
