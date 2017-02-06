@@ -25,6 +25,19 @@
     </ul>
 </div>
 
+<c:forEach var="a" items="${list}">
+    <div class="advertIndex">
+        <p>Name : ${a.name} </p>
+        <p>Price : ${a.price} $</p>
+        <p>Date : ${a.publishDate} </p>
+        <c:if test="${not empty a.imageUrl}">
+            <img src="${a.imageUrl}" class="imageadvert">
+        </c:if>
+        <br>
+        <a href="<%=request.getContextPath()%>/view?id=${a.id}">View</a>
+    </div>
+</c:forEach>
+
 <%@ include file="include/javascript.jsp" %>
 </body>
 </html>
