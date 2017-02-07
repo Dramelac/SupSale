@@ -6,7 +6,7 @@
 </head>
 <body>
 <%@ include file="include/header.jsp" %>
-
+<div class="container">
 <div class="advert">
     <h1>${advert.name} </h1>
     <p>Categorie : ${advert.categorie.name}</p>
@@ -25,7 +25,7 @@
         <a href="<%=request.getContextPath()%>/user/removeadvert?id=${advert.id}">Remove</a><br>
     </c:if>
 </div>
-
+</div>
 <%@ include file="include/javascript.jsp" %>
 </body>
 </html>

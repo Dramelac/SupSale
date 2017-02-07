@@ -13,13 +13,13 @@
 </c:if>
 
 <c:if test="${fn:length(resultList) > 0}">
-    =========================================
+    ___________________________________________
     <c:forEach var="a" items="${resultList}">
         <div class="advert">
             <a href="<%=request.getContextPath()%>/view?id=${a.id}">
                 <p>Name : ${a.name} </p>
             </a>
-            =========================================
+            ___________________________________________
         </div>
     </c:forEach>
 </c:if>
