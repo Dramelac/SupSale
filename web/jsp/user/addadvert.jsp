@@ -6,46 +6,45 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp" %>
-
+<div class="margins">
 <h1>Hello ${username}, what do you want to add?</h1>
 <br>
 <br>
 <form action="addadvert" method="POST">
-    <label>
+    <label class="ajust_labels">
         Name of product :
-        <input type="text" name="advertname">
-    </label>
-    <br>
-    <label>
-        Its description :
-        <input type="text" name="description">
-    </label>
-    <br>
-    <label>
-        Categorie :
-        <select name="categorie">
-            <option value=""></option>
-            <c:forEach items="${categorieList}" var="option">
-                <option value="${option}">
-                    <c:out value="${option.name}"></c:out>
-                </option>
-            </c:forEach>
-        </select>
-    </label>
-    <br>
-    <label>
-        Image url :
-        <input type="text" name="image">
-    </label>
-    <br>
-    <label>
-        Its price :
-        <input type="text" name="price">
-    </label>
-    <br>
-    <input type="submit" value="Add advert">
-</form>
 
+    </label> <input type="text" name="advertname">
+    <br><br>
+    <label class="ajust_labels">
+        Its description :
+
+    </label><input type="text" name="description">
+    <br><br>
+    <label class="ajust_labels">
+        Categorie :
+
+    </label><select name="categorie">
+    <option value=""></option>
+    <c:forEach items="${categorieList}" var="option">
+        <option value="${option}">
+            <c:out value="${option.name}"></c:out>
+        </option>
+    </c:forEach>
+</select>
+    <br><br>
+    <label class="ajust_labels">
+        Image url :
+    </label> <input type="text" name="image">
+    <br><br>
+    <label class="ajust_labels">
+        Its price :
+
+    </label> <input type="text" name="price">
+    <br><br>
+    <input type="submit" value="Add advert" class="button">
+</form>
+</div>
 
 <%@ include file="../include/javascript.jsp" %>
 </body>

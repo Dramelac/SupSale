@@ -65,3 +65,14 @@ body{
 .filter{
 
 }
+
+.margins{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.ajust_labels{
+    display: block;
+    width: 150px;
+    float: left;
+}

@@ -6,7 +6,7 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp" %>
-
+<div class="margins">
 <h1>Hello ${username}</h1>
 
 <c:if test="${success}">
@@ -21,52 +21,52 @@
 </c:if>
 
 <form action="profile" method="POST">
-    <label>
+    <label class="ajust_labels">
         First name :
-        <input type="text" name="firstname" value="${user.firstname}">
-    </label>
-    <br>
-    <label>
+
+    </label> <input type="text" name="firstname" value="${user.firstname}">
+    <br> <br>
+    <label class="ajust_labels">
         Last name :
-        <input type="text" name="lastname" value="${user.lastname}">
-    </label>
-    <br>
-    <label>
+
+    </label><input type="text" name="lastname" value="${user.lastname}">
+    <br> <br>
+    <label class="ajust_labels">
         E-mail :
-        <input type="text" name="email" value="${user.email}">
-    </label>
-    <br>
-    <label>
+
+    </label><input type="text" name="email" value="${user.email}">
+    <br> <br>
+    <label class="ajust_labels">
         Address :
-        <input type="text" name="address" value="${user.address}">
-    </label>
-    <br>
-    <label>
+
+    </label><input type="text" name="address" value="${user.address}">
+    <br> <br>
+    <label class="ajust_labels">
         Phone number :
-        <input type="text" name="phonenumber" value="${user.phonenumber}">
-    </label>
-    <br>
+
+    </label> <input type="text" name="phonenumber" value="${user.phonenumber}">
+    <br> <br>
     <br>
     <h2>Change password :</h2>
-    <label>
+    <label class="ajust_labels">
         New password :
-        <input type="password" name="password">
-    </label>
-    <br>
-    <label>
+
+    </label><input type="password" name="password">
+    <br> <br>
+    <label class="ajust_labels">
         Verify new password :
-        <input type="password" name="check_password">
-    </label>
-    <br>
-    <label>
+
+    </label><input type="password" name="check_password">
+    <br> <br>
+    <label class="ajust_labels">
         Current password :
-        <input type="password" name="old_password">
-    </label>
-    <br>
-    <input type="submit" value="Update">
+
+    </label><input type="password" name="old_password">
+    <br> <br>
+    <input type="submit" value="Update" class="button">
 
 </form>
-
+</div>
 <c:if test="${user.isAdmin}">
     <div class="alert alert-info">
         <a href="<%=request.getContextPath()%>/admin/">You are admin ! You can access to the admin pannel here</a>
