@@ -22,9 +22,9 @@ public class AdvertDAO {
         em.close();
     }
 
-    public static List<Advert> getAllAdverts(){
+    public static List<Advert> getAllAdvertsOrderByPublishDate(){
         EntityManager em = PersistenceManager.getEntityManager();
-        Query  query = em.createQuery("SELECT a FROM Advert a");
+        Query  query = em.createQuery("SELECT a FROM Advert a ORDER BY a.publishDate DESC ");
         List<Advert> adverts = (List<Advert>)query.getResultList();
         return adverts;
     }
