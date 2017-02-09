@@ -16,13 +16,30 @@
         <img src="${advert.imageUrl}">
     </c:if>
 
-    <p>Posted by ${owner} at ${advert.publishDate}</p>
+    <p>Posted by ${owner.username} at ${advert.publishDate}</p>
     <p>Price : ${advert.price}€</p>
+    <br>
 
     <c:if test="${isOwner}">
         <h2>You are the owner</h2>
         <a href="<%=request.getContextPath()%>/user/updateadvert?id=${advert.id}">Edit</a> |
         <a href="<%=request.getContextPath()%>/user/removeadvert?id=${advert.id}">Remove</a><br>
+    </c:if>
+
+    <c:if test="${(!isOwner) and (not empty username) }">
+        <form name="contact_form" method="POST">
+            <label>
+                Telephone number of the owner: ${owner.phonenumber}
+            </label>
+            <br>
+            <label>
+                Content of your mail to the owner:
+            </label>
+            <br>
+            <textarea name="email_content"></textarea>
+            <br><br>
+            <input type="submit" value="Send email" class="button">
+        </form>
     </c:if>
 </div>
 </div>

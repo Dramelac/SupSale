@@ -29,7 +29,7 @@ public class ViewAdvertServlet extends HttpServlet {
                 request.setAttribute("isOwner", true);
             }
             request.setAttribute("advert", advert);
-            request.setAttribute("owner", advert.getOwner().getUsername());
+            request.setAttribute("owner", advert.getOwner());
             request.getRequestDispatcher("/jsp/viewAdvert.jsp").forward(request, response);
         } catch (Exception e){
             response.sendError(404);

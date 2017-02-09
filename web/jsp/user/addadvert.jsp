@@ -41,6 +41,7 @@
         Its price :
 
     </label> <input type="text" name="price">
+        €
     <br><br>
     <input type="submit" value="Add advert" class="button">
 </form>
