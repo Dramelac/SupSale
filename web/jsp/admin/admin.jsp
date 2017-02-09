@@ -10,7 +10,7 @@
 <h1>Hello admin ${username}</h1>
 
 <p><a href="<%=request.getContextPath()%>/admin/users">Manage users</a></p>
-<p><a href="<%=request.getContextPath()%>/admin/ads">Manage ads</a></p>
+<p><a href="<%=request.getContextPath()%>/admin/advert">Manage ads</a></p>
 
 <%@ include file="../include/javascript.jsp" %>
 </body>
