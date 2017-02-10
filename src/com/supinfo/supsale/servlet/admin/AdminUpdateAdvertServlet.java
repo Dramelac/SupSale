@@ -3,7 +3,6 @@ package com.supinfo.supsale.servlet.admin;
 import com.supinfo.supsale.DAL.AdvertDAO;
 import com.supinfo.supsale.entity.Advert;
 import com.supinfo.supsale.entity.Categorie;
-import javassist.NotFoundException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +24,7 @@ public class AdminUpdateAdvertServlet extends HttpServlet {
         if (!cat.isEmpty()){
             advert.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
         }
-        advert.setPrice(Integer.parseInt(request.getParameter("price")));
+        advert.setPrice(Double.parseDouble(request.getParameter("price")));
         AdvertDAO.updateAdvert(advert);
 
         response.sendRedirect(request.getContextPath() + "/admin/advert");

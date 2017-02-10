@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 @WebServlet(name = "UpdateAdvertServlet", urlPatterns = "/user/updateadvert")
@@ -38,7 +35,7 @@ public class UpdateAdvertServlet extends HttpServlet {
         if (!cat.isEmpty()){
             advert.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
         }
-        advert.setPrice(Integer.parseInt(request.getParameter("price")));
+        advert.setPrice(Double.parseDouble(request.getParameter("price")));
         AdvertDAO.updateAdvert(advert);
 
         response.sendRedirect(request.getContextPath() + "/view?id=" + id);

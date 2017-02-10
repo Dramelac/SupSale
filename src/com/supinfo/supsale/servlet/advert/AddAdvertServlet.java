@@ -11,10 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 
 @WebServlet(name = "AddAdvertServlet",urlPatterns = "/user/addadvert")
@@ -27,7 +24,7 @@ public class AddAdvertServlet extends HttpServlet {
         advert.setDescription(request.getParameter("description"));
         advert.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
         advert.setPublishDate(new Date());
-        advert.setPrice(Integer.parseInt(request.getParameter("price")));
+        advert.setPrice(Double.parseDouble(request.getParameter("price")));
         advert.setOwner(user);
         user.getAdverts().add(advert);
         UserDAO.updateUser(user);

@@ -19,7 +19,7 @@ public class Advert implements Serializable{
     private String description;
 
     @Column(unique = false)
-    private int price;
+    private double price;
 
     @Column(unique = false, nullable = true)
     private String imageUrl;
@@ -48,9 +48,9 @@ public class Advert implements Serializable{
 
     public void setDescription(String description) {this.description = description;}
 
-    public int getPrice() {return price;}
+    public double getPrice() {return price;}
 
-    public void setPrice(int price) {this.price = price;}
+    public void setPrice(double price) {this.price = price;}
 
     public User getOwner() {return owner;}
 
