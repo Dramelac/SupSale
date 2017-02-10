@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-3">
             <img src="<c:url value="/img/logo.png" />" class="logo"/>
-            <h4>Entrer your information to register</h4>
+            <h5>Enter your informations to register</h5>
         </div>
         <div class="col-md-offset-1 col-md-8">
             <c:if test="${failed}">

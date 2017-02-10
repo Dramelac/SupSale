@@ -11,7 +11,7 @@
     <div class="text_index row">
         <img src="<c:url value="/img/logo.png" />" class="col-md-2 logo"/>
         <div class="col-md-offset-1 col-md-8">
-            <p>Supsale is a second-hand advert selling site.You can publish an ad to sell an object. You can list ads and search
+            <p>Supsales is a second-hand advert selling site.You can publish an ad to sell an object. You can list ads and search
                 for an article by search engine.
                 On the Supsale website, you can search ads in all the following categories : Vehicles, Jobs, Real Estate,
                 Multimedia, Professional Equipment, House, Leisure, Services, Other.
@@ -23,9 +23,9 @@
     <div class="row">
         <div class="filter col-md-2">
             <p>Filter by categorie : </p>
-            <ul>
+            <ul >
                 <c:forEach items="${categorieList}" var="option">
-                    <li><a href="search?q=${option}">${option.name}</a></li>
+                    <li class="categories"><a href="search?q=${option}">${option.name}</a></li>
                 </c:forEach>
             </ul>
         </div>

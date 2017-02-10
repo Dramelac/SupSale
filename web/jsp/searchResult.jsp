@@ -7,7 +7,7 @@
 </head>
 <body>
 <%@ include file="include/header.jsp" %>
-
+<div class="margins">
 <c:if test="${not empty filter}">
     <h3>Result search for : ${filter}</h3>
 </c:if>
@@ -26,7 +26,7 @@
 <c:if test="${fn:length(resultList) == 0}">
     <p>No product found.</p>
 </c:if>
-
+</div>
 
 <%@ include file="include/javascript.jsp" %>
 </body>

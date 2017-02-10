@@ -11,8 +11,9 @@
     <div class="row">
         <div class="col-md-3">
             <img src="<c:url value="/img/logo.png" />" class="logo"/>
-            <h4>Log in</h4>
+            <h5>Log in</h5>
         </div>
+        <div class=" margin_login"
         <div class="col-md-offset-1 col-md-8">
             <c:if test="${failed}">
                 <div class="alert alert-danger">
@@ -30,6 +31,7 @@
                 </label><br/>
                 <input type="submit" value="Log in" class="button">
             </form>
+        </div>
         </div>
     </div>
 </div>
