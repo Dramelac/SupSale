@@ -6,12 +6,12 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp" %>
-
+<div class="margins">
 <h1>Hello admin ${username}</h1>
 
 <p><a href="<%=request.getContextPath()%>/admin/users">Manage users</a></p>
 <p><a href="<%=request.getContextPath()%>/admin/advert">Manage ads</a></p>
-
+<div>
 <%@ include file="../include/javascript.jsp" %>
 </body>
 </html>

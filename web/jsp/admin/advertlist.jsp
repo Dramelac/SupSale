@@ -13,6 +13,7 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp" %>
+<div class="margins">
 <h1>Adverts list : </h1>
 
 <c:forEach var="a" items="${advertList}">
@@ -29,7 +30,7 @@
         <a href="<%=request.getContextPath()%>/admin/updateadvert?id=${a.id}">Update</a>
     </div>
 </c:forEach>
-
+<div>
 <%@ include file="../include/javascript.jsp" %>
 </body>
 </html>

@@ -13,7 +13,7 @@
                     <li><a href="<%=request.getContextPath()%>/user/advertmanager"><p class="buttons_header">Advert manager</p></a></li>
 
                     <c:if test="${isAdmin}">
-                        <li><a href="<%=request.getContextPath()%>/admin/"><p>Admin panel</p></a></li>
+                        <li><a href="<%=request.getContextPath()%>/admin/"><p class="buttons_header">Admin panel</p></a></li>
                     </c:if>
                 </c:if>
             </ul>
