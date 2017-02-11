@@ -29,6 +29,14 @@ public class AdvertDAO {
         return adverts;
     }
 
+    public static List<Advert> getTenAdvertsOrderByPublishDate(){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query  query = em.createQuery("SELECT  a FROM Advert a ORDER BY a.publishDate DESC");
+        query.setMaxResults(2);
+        List<Advert> adverts = (List<Advert>)query.getResultList();
+        return adverts;
+    }
+
     public static Advert getAdvertById(int id){
         EntityManager em = PersistenceManager.getEntityManager();
         return em.find(Advert.class, id);

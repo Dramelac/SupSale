@@ -6,14 +6,15 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp" %>
-<div class="margins">
-<h1>Users list : </h1>
+<div class="container">
+    <h1>Users list : </h1>
 
-_________________________________________
-<c:forEach var="u" items="${userList}">
-    <div class="advert">
-        <p <c:if test="${u.isAdmin}">style="color: red"</c:if>>Name : ${u.username} </p> |
-        <a href="<%=request.getContextPath()%>/admin/removeuser?id=${u.id}" class="button_style2">Remove</a>
+
+    <c:forEach var="u" items="${userList}">
+    <div class="advertIndex">
+        <div class="advertName" <c:if test="${u.isAdmin}">style="color: red"</c:if>>${u.username} </div>
+        <a href="<%=request.getContextPath()%>/admin/removeuser?id=${u.id}" class="button_style2">Remove</a> |
+
         <c:if test="${u.isAdmin}">
             <a href="<%=request.getContextPath()%>/admin/setadmin?id=${u.id}&isAdmin=false" class="button_style2">Demote Admin</a>
         </c:if>
@@ -21,10 +22,9 @@ _________________________________________
             <a href="<%=request.getContextPath()%>/admin/setadmin?id=${u.id}&isAdmin=true" class="button_style2">Promote Admin</a>
         </c:if>
         <br>
-        _________________________________________
     </div>
-</c:forEach>
-<div>
-<%@ include file="../include/javascript.jsp" %>
+    </c:forEach>
+    <div>
+        <%@ include file="../include/javascript.jsp" %>
 </body>
 </html>

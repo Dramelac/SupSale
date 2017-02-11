@@ -13,10 +13,10 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp" %>
-<div class="margins">
-<h1>Adverts list : </h1>
+<div class="container">
+    <h1>Adverts list : </h1>
 
-<c:forEach var="a" items="${advertList}">
+    <c:forEach var="a" items="${advertList}">
     <div class="advertIndex">
         <p>Name : ${a.name} </p>
         <p>Price : ${a.price} €</p>
@@ -25,12 +25,14 @@
             <img src="${a.imageUrl}" class="imageadvert">
         </c:if>
         <br>
+
         <a href="<%=request.getContextPath()%>/admin/removeadvert?id=${a.id}" class="button_style2">Remove</a>
 
         <a href="<%=request.getContextPath()%>/admin/updateadvert?id=${a.id}" class="button_style2">Update</a>
+
     </div>
-</c:forEach>
-<div>
-<%@ include file="../include/javascript.jsp" %>
+    </c:forEach>
+    <div>
+        <%@ include file="../include/javascript.jsp" %>
 </body>
 </html>
