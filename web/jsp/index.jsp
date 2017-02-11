@@ -3,6 +3,7 @@
 <head>
     <title>SupSale - Index</title>
     <%@ include file="include/style.jsp" %>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
 </head>
 <body>
 <%@ include file="include/header.jsp" %>
@@ -40,7 +41,7 @@
                         <img src="${a.imageUrl}" class="imageadvert">
                     </c:if>
                     <br>
-                    <a href="<%=request.getContextPath()%>/view?id=${a.id}">View</a>
+                    <a href="<%=request.getContextPath()%>/view?id=${a.id}" class="button_style2">View</a>
                 </div>
             </c:forEach>
         </div>
