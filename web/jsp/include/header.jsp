@@ -17,7 +17,7 @@
                     </c:if>
                 </c:if>
             </ul>
-            <form method="GET" action="search" class="nav navbar-form navbar-left" role="search">
+            <form method="GET" action="<%=request.getContextPath()%>/search" class="nav navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <input type="text" name="q" class="search_input" placeholder="Search">
 
