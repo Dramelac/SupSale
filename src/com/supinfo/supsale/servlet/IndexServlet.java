@@ -25,7 +25,7 @@ public class IndexServlet extends HttpServlet {
         request.setAttribute("userCount", UserDAO.getUserCount());
         request.setAttribute("advertCount", AdvertDAO.getAdvertCount());
         request.setAttribute("categorieList", Categorie.CategorieList);
-        request.setAttribute("list", AdvertDAO.getAllAdvertsOrderByPublishDate());
+        request.setAttribute("list", AdvertDAO.getTenAdvertsOrderByPublishDate());
 
         request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
     }

@@ -6,7 +6,7 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp" %>
-<div class="margins">
+<div class="container">
 <h1>Hello ${username}, what do you want to add?</h1>
 <br>
 <br>

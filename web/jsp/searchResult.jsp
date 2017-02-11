@@ -7,7 +7,7 @@
 </head>
 <body>
 <%@ include file="include/header.jsp" %>
-<div class="margins">
+<div class="container">
 <c:if test="${not empty filter}">
     <h3>Result search for : ${filter}</h3>
 </c:if>

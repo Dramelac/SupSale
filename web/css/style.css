@@ -1,8 +1,6 @@
 
 body{
-
     font-family: Arial;
-
 }
 
 .row {
@@ -14,6 +12,9 @@ body{
     margin-top: 30px;
 }
 
+.navbar {
+    border-radius: 0;
+}
 
 .button {
     background-color: #060621;
@@ -52,12 +53,13 @@ body{
 .imageadvert{
     max-width: 600px;
     max-height: 400px;
+    margin: auto;
+    horiz-align: center;
 }
 
 .advertIndex{
-    border-width: 3px;
-    border-style: solid;
-    border-color: black;
+    border-radius: 10px;
+    background-color: rgba(97, 131, 158, 0.26);
     padding: 5px;
     margin: 3px;
 }
@@ -65,13 +67,18 @@ body{
 .advertIndex p{
     font-weight: bold;
 }
-.filter{
 
+.advertIndex a, .advertIndex a:hover{
+    color: black;
+    text-decoration: none;
 }
 
-.margins{
-    margin-left: 30px;
-    margin-top: 10px;
+.advertName {
+    background-color: rgba(0, 128, 0, 0.50);
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .ajust_labels{
