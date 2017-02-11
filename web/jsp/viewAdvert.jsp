@@ -7,17 +7,29 @@
 <body>
 <%@ include file="include/header.jsp" %>
 <div class="container">
-    <div class="advert">
-        <h1>${advert.name} </h1>
-        <p>Categorie : ${advert.categorie.name}</p>
-        <p>${advert.description}</p>
+    <div class="advertIndex">
+        <h1 class="advertName large">${advert.name} </h1>
 
-        <c:if test="${not empty advert.imageUrl}">
-            <img src="${advert.imageUrl}">
-        </c:if>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-7">
+                <c:if test="${not empty advert.imageUrl}">
+                    <img src="${advert.imageUrl}" class="imageadvert">
+                </c:if>
+                <c:if test="${empty advert.imageUrl}">
+                    <img src="<%=request.getContextPath()%>/img/no-img.png" class="imageadvert">
+                </c:if>
+            </div>
+            <div class="col-md-offset-1 col-md-3">
+                <p>Categorie : ${advert.categorie} </p>
+                <p>Posted by ${owner.username} at ${advert.publishDate}</p>
+                <p>Price : ${advert.price}€</p>
+            </div>
+        </div>
 
-        <p>Posted by ${owner.username} at ${advert.publishDate}</p>
-        <p>Price : ${advert.price}€</p>
+        <div class="row col-md-offset-1">
+            <p>${advert.description}</p>
+        </div>
+
         <br>
 
         <c:if test="${isOwner}">

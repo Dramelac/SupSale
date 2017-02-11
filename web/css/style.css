@@ -81,6 +81,10 @@ body{
     font-weight: bold;
 }
 
+.large {
+    font-size: 40px;
+}
+
 .ajust_labels{
     display: block;
     width: 150px;
