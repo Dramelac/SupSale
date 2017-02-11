@@ -10,7 +10,7 @@ public class PersistenceManager {
 
     private PersistenceManager(){}
 
-    public static EntityManagerFactory getEntityManagerFactory(){
+    private static EntityManagerFactory getEntityManagerFactory(){
         if(emf == null){
             emf = Persistence.createEntityManagerFactory("PersistenceUnit");
         }
