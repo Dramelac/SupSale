@@ -31,7 +31,7 @@ body{
 .button_style2{
     background-color: #060621;
     border: none;
-    color: white;
+    color: white !important;
     padding: 6px 30px;
     text-align: center;
     text-decoration: none;
