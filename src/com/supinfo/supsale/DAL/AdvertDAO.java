@@ -19,7 +19,6 @@ public class AdvertDAO {
         et.begin();
         em.merge(advert);
         et.commit();
-        em.close();
     }
 
     public static List<Advert> getAllAdvertsOrderByPublishDate(){
@@ -48,7 +47,6 @@ public class AdvertDAO {
         et.begin();
         em.remove(em.contains(ad) ? ad : em.merge(ad));
         et.commit();
-        em.close();
     }
 
     public static long getAdvertCount(){
