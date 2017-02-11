@@ -13,13 +13,29 @@
 </c:if>
 
 <c:if test="${fn:length(resultList) > 0}">
-    ___________________________________________
     <c:forEach var="a" items="${resultList}">
-        <div class="advert">
+        <div class="advertIndex col-md-12">
             <a href="<%=request.getContextPath()%>/view?id=${a.id}">
-                <p>Name : ${a.name} </p>
+                <div class="advertName">
+                        ${a.name}
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-7">
+                        <c:if test="${not empty a.imageUrl}">
+                            <img src="${a.imageUrl}" class="imageadvert">
+                        </c:if>
+                        <c:if test="${empty a.imageUrl}">
+                            <img src="<%=request.getContextPath()%>/img/no-img.png" class="imageadvert">
+                        </c:if>
+                    </div>
+                    <div class="col-md-offset-1 col-md-3">
+                        <p>Categorie : ${a.categorie} </p>
+                        <p>Price : ${a.price} €</p>
+                        <p>Date : ${a.publishDate} </p>
+                    </div>
+                </div>
+                <br>
             </a>
-            ___________________________________________
         </div>
     </c:forEach>
 </c:if>
