@@ -25,8 +25,11 @@
             <img src="${a.imageUrl}" class="imageadvert">
         </c:if>
         <br>
-        <a href="<%=request.getContextPath()%>/admin/removeadvert?id=${a.id}">Remove</a> |
-        <a href="<%=request.getContextPath()%>/admin/updateadvert?id=${a.id}">Update</a>
+
+        <a href="<%=request.getContextPath()%>/admin/removeadvert?id=${a.id}" class="button_style2">Remove</a>
+
+        <a href="<%=request.getContextPath()%>/admin/updateadvert?id=${a.id}" class="button_style2">Update</a>
+
     </div>
     </c:forEach>
     <div>

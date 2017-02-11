@@ -3,6 +3,7 @@
 <head>
     <title>SupSale - Index</title>
     <%@ include file="include/style.jsp" %>
+
 </head>
 <body>
 <%@ include file="include/header.jsp" %>
@@ -34,6 +35,7 @@
 
         <div class="col-md-offset-1 col-md-9">
             <c:forEach var="a" items="${list}">
+
                 <div class="advertIndex col-md-12">
                     <a href="<%=request.getContextPath()%>/view?id=${a.id}">
                         <div class="advertName">
@@ -54,6 +56,7 @@
                         </div>
                         <br>
                     </a>
+
                 </div>
             </c:forEach>
         </div>

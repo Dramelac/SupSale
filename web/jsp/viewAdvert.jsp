@@ -32,11 +32,14 @@
 
         <br>
 
+
         <c:if test="${isOwner}">
             <h2>You are the owner</h2>
-            <a href="<%=request.getContextPath()%>/user/updateadvert?id=${advert.id}">Edit</a> |
-            <a href="<%=request.getContextPath()%>/user/removeadvert?id=${advert.id}">Remove</a><br>
+            <a href="<%=request.getContextPath()%>/user/updateadvert?id=${advert.id}" class="button_style2">Edit</a> |
+            <a href="<%=request.getContextPath()%>/user/removeadvert?id=${advert.id}"
+               class="button_style2">Remove</a><br>
         </c:if>
+
 
         <c:if test="${(!isOwner) and (not empty username) }">
             <form name="contact_form" method="POST">

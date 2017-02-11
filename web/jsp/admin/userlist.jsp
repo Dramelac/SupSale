@@ -9,15 +9,17 @@
 <div class="container">
     <h1>Users list : </h1>
 
+
     <c:forEach var="u" items="${userList}">
     <div class="advertIndex">
         <div class="advertName" <c:if test="${u.isAdmin}">style="color: red"</c:if>>${u.username} </div>
-        <a href="<%=request.getContextPath()%>/admin/removeuser?id=${u.id}">Remove</a> |
+        <a href="<%=request.getContextPath()%>/admin/removeuser?id=${u.id}" class="button_style2">Remove</a> |
+
         <c:if test="${u.isAdmin}">
-            <a href="<%=request.getContextPath()%>/admin/setadmin?id=${u.id}&isAdmin=false">Demote Admin</a>
+            <a href="<%=request.getContextPath()%>/admin/setadmin?id=${u.id}&isAdmin=false" class="button_style2">Demote Admin</a>
         </c:if>
         <c:if test="${not u.isAdmin}">
-            <a href="<%=request.getContextPath()%>/admin/setadmin?id=${u.id}&isAdmin=true">Promote Admin</a>
+            <a href="<%=request.getContextPath()%>/admin/setadmin?id=${u.id}&isAdmin=true" class="button_style2">Promote Admin</a>
         </c:if>
         <br>
     </div>

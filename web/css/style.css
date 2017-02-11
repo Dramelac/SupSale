@@ -28,7 +28,17 @@ body{
     margin-top: 10px;
 }
 
-
+.button_style2{
+    background-color: #060621;
+    border: none;
+    color: white;
+    padding: 6px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+}
 .logo {
     max-width: 300px;
     max-height: 300px;
@@ -158,11 +168,12 @@ body{
     color: white;
 }
 
-.categories a:link,.categories a:active,.categories a:hover,.categories a:visited {
+.categories a:link,.categories a:active,.categories a:hover,.categories a:visited{
     text-decoration: none;
     color: white;
 
 }
+
 
 h5{
     text-align: center;
@@ -173,3 +184,4 @@ h5{
 .margin_login{
     margin-top: 100px;
 }
+
