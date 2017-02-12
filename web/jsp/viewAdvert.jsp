@@ -53,11 +53,6 @@
                     E-mail of the owner: ${owner.email}
                 </label><br><br>
                 <label>
-                    Suject of your mail to the owner:
-                </label><br>
-                <input type="text" name="email_subject">
-                <br>
-                <label>
                     Content of your mail to the owner:
                 </label><br>
                 <textarea name="email_content"></textarea>

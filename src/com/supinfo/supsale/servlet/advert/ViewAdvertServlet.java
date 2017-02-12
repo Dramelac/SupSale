@@ -24,10 +24,10 @@ public class ViewAdvertServlet extends HttpServlet {
                 User senderuser = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
                 String host = "smtp.gmail.com";
                 String port = "587";
-                String user = senderuser.getEmail();
+                String user = "Supsaleproject@gmail.com";
                 String pass = "<InsertPassword>";
                 String recipient = advert.getOwner().getEmail();
-                String subject = request.getParameter("email_subject");
+                String subject = senderuser.getEmail() + " from SupSale sent you a message";
                 String content = request.getParameter("email_content");
 
                 String resultMessage = "";
