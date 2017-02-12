@@ -19,6 +19,7 @@ public class AdvertDAO {
         et.begin();
         em.merge(advert);
         et.commit();
+        em.close();
     }
 
     public static List<Advert> getAllAdvertsOrderByPublishDate(){
@@ -31,7 +32,7 @@ public class AdvertDAO {
     public static List<Advert> getTenAdvertsOrderByPublishDate(){
         EntityManager em = PersistenceManager.getEntityManager();
         Query  query = em.createQuery("SELECT  a FROM Advert a ORDER BY a.publishDate DESC");
-        query.setMaxResults(2);
+        query.setMaxResults(10);
         List<Advert> adverts = (List<Advert>)query.getResultList();
         return adverts;
     }
@@ -47,6 +48,7 @@ public class AdvertDAO {
         et.begin();
         em.remove(em.contains(ad) ? ad : em.merge(ad));
         et.commit();
+        em.close();
     }
 
     public static long getAdvertCount(){

@@ -18,7 +18,7 @@ public class PersistenceManager {
     }
 
     public static EntityManager getEntityManager(){
-        if(em == null){
+        if(em == null || !em.isOpen()){
             em = getEntityManagerFactory().createEntityManager();
         }
         return em;

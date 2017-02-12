@@ -22,7 +22,11 @@ public class AddAdvertServlet extends HttpServlet {
         advert.setName(request.getParameter("advertname"));
         advert.setImageUrl(request.getParameter("image"));
         advert.setDescription(request.getParameter("description"));
-        advert.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
+        if (!request.getParameter("categorie").isEmpty()){
+            advert.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
+        } else {
+            advert.setCategorie(Categorie.Other);
+        }
         advert.setPublishDate(new Date());
         advert.setPrice(Double.parseDouble(request.getParameter("price")));
         advert.setOwner(user);

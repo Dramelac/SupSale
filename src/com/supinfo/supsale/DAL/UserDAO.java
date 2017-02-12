@@ -17,6 +17,7 @@ public class UserDAO {
         et.begin();
         em.persist(user);
         et.commit();
+        em.close();
     }
 
     public static void updateUser(User user){
@@ -25,6 +26,7 @@ public class UserDAO {
         et.begin();
         em.merge(user);
         et.commit();
+        em.close();
     }
 
     public static String getPasswordByName(String username){
@@ -67,6 +69,7 @@ public class UserDAO {
         et.begin();
         em.remove(em.contains(user) ? user : em.merge(user));
         et.commit();
+        em.close();
     }
 
 }
