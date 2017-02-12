@@ -43,10 +43,15 @@
 
         <c:if test="${(!isOwner) and (not empty username) }">
             <form name="contact_form" method="POST">
+                <p>You can contact ${owner.username} here :</p>
+                <c:if test="${not empty owner.phonenumber}">
+                    <label>
+                        Telephone number of the owner: ${owner.phonenumber}
+                    </label><br>
+                </c:if>
                 <label>
-                    Telephone number of the owner: ${owner.phonenumber}
-                </label>
-                <br>
+                    E-mail of the owner: ${owner.email}
+                </label><br>
                 <label>
                     Content of your mail to the owner:
                 </label>

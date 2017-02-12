@@ -17,6 +17,29 @@ import java.io.IOException;
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("failed", false);
+
+        if (request.getParameter("username").isEmpty() ||
+                request.getParameter("password").isEmpty() ||
+                request.getParameter("passwordverif").isEmpty() ||
+                request.getParameter("email").isEmpty()){
+            request.setAttribute("failed", true);
+            request.setAttribute("message", "Required field is missing.");
+            doGet(request, response);
+            return;
+        }
+        if (!SecurityUtils.validateEmailAddress(request.getParameter("email"))){
+            request.setAttribute("failed", true);
+            request.setAttribute("message", "E-mail is invalid.");
+            doGet(request, response);
+            return;
+        }
+        if (request.getParameter("password").equals(request.getParameter("passwordverif"))){
+            request.setAttribute("failed", true);
+            request.setAttribute("message", "Password not match.");
+            doGet(request, response);
+            return;
+        }
+
         User user = new User();
         user.setFirstname(request.getParameter("firstname"));
         user.setLastname(request.getParameter("lastname"));
@@ -25,30 +48,17 @@ public class RegisterServlet extends HttpServlet {
         user.setPhonenumber(request.getParameter("phonenumber"));
         user.setUsername(request.getParameter("username"));
 
+        user.setPassword(SecurityUtils.getHashfromPassword(request.getParameter("password")));
 
-        if (request.getParameter("password").equals(request.getParameter("passwordverif")) && !request.getParameter("username").isEmpty()){
-
-            user.setPassword(SecurityUtils.getHashfromPassword(request.getParameter("password")));
-
-            try {
-                UserDAO.addUser(user);
-                request.getSession().setAttribute("username", user.getUsername());
-                request.getSession().setAttribute("userId", user.getId());
-                request.getSession().setAttribute("isAdmin", user.isAdmin());
-                response.sendRedirect(request.getContextPath() + "/index");
-            } catch (RollbackException e) {
-                request.setAttribute("failed", true);
-                request.setAttribute("message", "This account or email already exist.");
-                doGet(request, response);
-            }
-        } else if (request.getParameter("username").isEmpty()){
+        try {
+            UserDAO.addUser(user);
+            request.getSession().setAttribute("username", user.getUsername());
+            request.getSession().setAttribute("userId", user.getId());
+            request.getSession().setAttribute("isAdmin", user.isAdmin());
+            response.sendRedirect(request.getContextPath() + "/index");
+        } catch (RollbackException e) {
             request.setAttribute("failed", true);
-            request.setAttribute("message", "Required field is missing.");
-            doGet(request, response);
-        }
-        else {
-            request.setAttribute("failed", true);
-            request.setAttribute("message", "Password not match.");
+            request.setAttribute("message", "This account or email already exist.");
             doGet(request, response);
         }
 
