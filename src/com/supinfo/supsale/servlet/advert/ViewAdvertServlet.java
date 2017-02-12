@@ -16,10 +16,6 @@ import java.io.IOException;
 
 @WebServlet(name = "ViewAdvertServlet", urlPatterns = "/view")
 public class ViewAdvertServlet extends HttpServlet {
-    private String host;
-    private String port;
-    private String user;
-    private String pass;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
@@ -45,7 +41,7 @@ public class ViewAdvertServlet extends HttpServlet {
                     resultMessage = "There were an error: " + ex.getMessage();
                 } finally {
                     request.setAttribute("Message", resultMessage);
-                    getServletContext().getRequestDispatcher("/jsp/Result.jsp").forward(request, response);
+                    getServletContext().getRequestDispatcher("/jsp/emailResult.jsp").forward(request, response);
                 }
         } catch (Exception e){
             response.sendError(404);
