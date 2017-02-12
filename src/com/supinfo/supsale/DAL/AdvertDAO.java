@@ -43,6 +43,7 @@ public class AdvertDAO {
     }
 
     public static void removeAdvertByAdvert(Advert ad){
+        PersistenceManager.getEntityManager().close();
         EntityManager em = PersistenceManager.getEntityManager();
         EntityTransaction et = em.getTransaction();
         et.begin();
