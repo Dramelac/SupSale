@@ -13,6 +13,7 @@
           <element id="library" level="project" name="mysql" />
           <element id="library" level="project" name="commons-collections-3.1" />
           <element id="library" level="project" name="org.mindrot:jbcrypt:0.3m" />
+          <element id="library" level="project" name="mail" />
         </element>
       </element>
     </root>

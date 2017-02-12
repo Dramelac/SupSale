@@ -51,13 +51,22 @@
                 </c:if>
                 <label>
                     E-mail of the owner: ${owner.email}
-                </label><br>
+                </label><br><br>
                 <label>
                     Content of your mail to the owner:
-                </label>
-                <br>
+                </label><br>
                 <textarea name="email_content"></textarea>
-                <br><br>
+                <br>
+                <c:if test="${success_mail}">
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> ${message_mail}
+                    </div>
+                </c:if>
+                <c:if test="${failed_mail}">
+                    <div class="alert alert-danger">
+                        <strong>Failed!</strong> ${message_mail}
+                    </div>
+                </c:if>
                 <input type="submit" value="Send email" class="button">
             </form>
         </c:if>
