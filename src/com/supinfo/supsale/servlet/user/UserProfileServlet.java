@@ -17,27 +17,49 @@ public class UserProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("failed", false);
 
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String passwordverif = request.getParameter("check_password");
+
+        if (email.isEmpty()){
+            request.setAttribute("failed", true);
+            request.setAttribute("message", "Required field is missing.");
+            doGet(request, response);
+            return;
+        }
+        if (!SecurityUtils.validateEmailAddress(email)){
+            request.setAttribute("failed", true);
+            request.setAttribute("message", "E-mail is invalid.");
+            doGet(request, response);
+            return;
+        }
+        if (!password.isEmpty() && password.length() < 8){
+            request.setAttribute("failed", true);
+            request.setAttribute("message", "Password is too weak (< 8).");
+            doGet(request, response);
+            return;
+        }
+        if (!password.isEmpty() && !password.equals(passwordverif)){
+            request.setAttribute("failed", true);
+            request.setAttribute("message", "Password not match.");
+            doGet(request, response);
+            return;
+        }
+
         User user = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
         user.setFirstname(request.getParameter("firstname"));
         user.setLastname(request.getParameter("lastname"));
-        user.setEmail(request.getParameter("email"));
+        user.setEmail(email);
         user.setAddress(request.getParameter("address"));
         user.setPhonenumber(request.getParameter("phonenumber"));
 
-        String pass = request.getParameter("password");
-        if (!pass.isEmpty()) {
-            if (!request.getParameter("password").equals(request.getParameter("check_password"))) {
-                request.setAttribute("failed", true);
-                request.setAttribute("message", "Password not match.");
+        if (!password.isEmpty()){
+            if (SecurityUtils.checkPassword(request.getParameter("old_password"), user.getPassword())) {
+                user.setPassword(SecurityUtils.getHashfromPassword(password));
             } else {
-                if (SecurityUtils.checkPassword(request.getParameter("old_password"), user.getPassword())) {
-                    user.setPassword(SecurityUtils.getHashfromPassword(pass));
-                } else {
-                    request.setAttribute("failed", true);
-                    request.setAttribute("message", "Wrong current password.");
-                }
+                request.setAttribute("failed", true);
+                request.setAttribute("message", "Wrong current password.");
             }
-
         }
 
         if (!(boolean) request.getAttribute("failed")) {

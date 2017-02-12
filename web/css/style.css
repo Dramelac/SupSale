@@ -185,3 +185,8 @@ h5{
     margin-top: 100px;
 }
 
+.mandatory {
+    color: red;
+    font-weight: bolder;
+    font-size: large;
+}

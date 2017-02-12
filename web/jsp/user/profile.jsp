@@ -38,7 +38,7 @@
         </label><input type="text" name="lastname" value="${user.lastname}">
         <br> <br>
         <label class="ajust_labels">
-            E-mail :
+            E-mail <span class="mandatory">*</span>:
 
         </label><input type="text" name="email" value="${user.email}">
         <br> <br>

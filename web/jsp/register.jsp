@@ -25,42 +25,42 @@
 
                 </label>
                 <br>
-                <input type="text" name="firstname" class="inputs_register">
+                <input type="text" name="firstname" class="inputs_register" value="${firstname}">
                 <br>
                 <label class="labels_register">
                     Last name
                 </label>
                 <br>
-                <input type="text" name="lastname" class="inputs_register">
+                <input type="text" name="lastname" class="inputs_register" value="${lastname}">
 
                 <br>
                 <label class="labels_register">
-                    E-mail
+                    E-mail <span class="mandatory">*</span>
 
-                </label> <br><input type="text" name="email" class="inputs_register">
+                </label> <br><input type="text" name="email" class="inputs_register" value="${email}"">
                 <br>
                 <label class="labels_register">
                     Address
 
-                </label> <br><input type="text" name="address" class="inputs_register">
+                </label> <br><input type="text" name="address" class="inputs_register" value="${address}">
                 <br>
                 <label class="labels_register">
                     Phone number
 
-                </label> <br><input type="text" name="phonenumber" class="inputs_register">
+                </label> <br><input type="text" name="phonenumber" class="inputs_register" value="${phonenumber}">
                 <br>
                 <label class="labels_register">
-                    Username
+                    Username <span class="mandatory">*</span>
 
-                </label> <br><input type="text" name="username" class="inputs_register">
+                </label> <br><input type="text" name="username" class="inputs_register" value="${username}">
                 <br>
                 <label class="labels_register">
-                    Password
+                    Password <span class="mandatory">*</span>
 
                 </label> <br><input type="password" name="password" class="inputs_register">
                 <br>
                 <label class="labels_register">
-                    Password verification
+                    Password verification <span class="mandatory">*</span>
 
                 </label> <br> <input type="password" name="passwordverif" class="inputs_register">
                 <br>
