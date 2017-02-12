@@ -14,20 +14,20 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class EmailUtility {
-    public static void sendEmail(String host, String port,
-                                 final String userName, final String password, String toAddress,
-                                 String subject, String message) throws AddressException,
-            MessagingException {
+    public static void sendEmail(String toAddress, String subject, String message) throws AddressException, MessagingException {
+
+        String user = "Supsaleproject@gmail.com";
+        String pass = "<InsertPassword>";
 
         Properties properties = new Properties();
-        properties.put("mail.smtp.host", host);
-        properties.put("mail.smtp.port", port);
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
 
         Authenticator auth = new Authenticator() {
             public PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(userName, password);
+                return new PasswordAuthentication(user, pass);
             }
         };
 
@@ -35,7 +35,7 @@ public class EmailUtility {
 
         Message msg = new MimeMessage(session);
 
-        msg.setFrom(new InternetAddress(userName));
+        msg.setFrom(new InternetAddress(user));
         InternetAddress[] toAddresses = { new InternetAddress(toAddress) };
         msg.setRecipients(Message.RecipientType.TO, toAddresses);
         msg.setSubject(subject);

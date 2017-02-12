@@ -22,26 +22,20 @@ public class ViewAdvertServlet extends HttpServlet {
                 Advert advert = AdvertDAO.getAdvertById(Integer.parseInt(request.getParameter("id")));
 
                 User senderuser = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
-                String host = "smtp.gmail.com";
-                String port = "587";
-                String user = "Supsaleproject@gmail.com";
-                String pass = "<InsertPassword>";
                 String recipient = advert.getOwner().getEmail();
                 String subject = senderuser.getEmail() + " from SupSale sent you a message";
                 String content = request.getParameter("email_content");
 
-                String resultMessage = "";
-
                 try {
-                    EmailUtility.sendEmail(host, port, user, pass, recipient, subject,
-                            content);
-                    resultMessage = "The e-mail was sent successfully";
+                    EmailUtility.sendEmail(recipient, subject, content);
+                    request.setAttribute("message_mail", "The e-mail was sent successfully");
+                    request.setAttribute("success_mail", true);
                 } catch (Exception ex) {
                     ex.printStackTrace();
-                    resultMessage = "There were an error: " + ex.getMessage();
+                    request.setAttribute("message_mail", "There were an error.");
+                    request.setAttribute("failed_mail", true);
                 } finally {
-                    request.setAttribute("Message", resultMessage);
-                    getServletContext().getRequestDispatcher("/jsp/emailResult.jsp").forward(request, response);
+                    getServletContext().getRequestDispatcher("/jsp/viewAdvert.jsp").forward(request, response);
                 }
         } catch (Exception e){
             response.sendError(404);
